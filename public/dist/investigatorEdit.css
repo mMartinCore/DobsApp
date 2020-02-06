@@ -1,0 +1,145 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.my_Modal_InvestEdit{
+
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   padding-top: 100px; /* Location of the box */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+
+
+
+}
+
+/* Modal Content */
+.Modal_InvestEdit-content {
+   position: relative;
+   background-color: #ececec;
+   margin: auto;
+   padding: 0;
+   border: 1px solid #888;
+   width: 65%;
+   height: 8%;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+   -webkit-animation-name: animatetop;
+   -webkit-animation-duration: 0.6s;
+   animation-name: animatetop;
+   animation-duration: 0.5s
+}
+
+
+
+
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+   from {top:-300px; opacity:0}
+   to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+   from {top:-300px; opacity:0}
+   to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.modal_InvestEdit_close {
+   color: red;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+
+}
+
+.modal_InvestEdit_close:hover,
+.close:focus {
+   color: #4268f4;
+   text-decoration: none;
+   cursor: pointer;
+
+}
+
+.modal_InvestEdit-header {
+   padding: 2px 16px;
+   background-color: #0a6ddf;
+   color: Black;
+}
+
+.modal_InvestEdit {padding: 2px 16px;}
+
+
+
+
+#Confirm_contentInvestEdit {
+   background:  white;
+   padding: 20px;
+   font-family: Helvetica;
+   color: Black;
+   top: 30px;
+   text-align: center;
+   border-radius: 5px;
+   border: 1px solid #aaa;
+
+
+
+
+}
+
+#btnConfirmInvestEdit  {
+   background-color: #4ac464;
+   display: inline-block;
+   border-radius: 5px;
+   border: 1px solid #aaa;
+   color: whitesmoke;
+   padding: 5px;
+   text-align: center;
+   width: 80px;
+   cursor: pointer;
+}
+
+#btnreassign  {
+    background-color: #4ac464;
+    color: whitesmoke;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+ }
+
+
+#cancelInvestEdit    {
+background-color: #d11414;
+color: whitesmoke;
+display: inline-block;
+border-radius: 5px;
+border: 1px solid #aaa;
+padding: 5px;
+text-align: center;
+width: 80px;
+cursor: pointer;
+}
+
+#Confirm_contentInvestEdit .messageEditInvest {
+background:  #feffff;
+border-radius: 4px;
+padding: 20px;
+font-size: 12px;
+text-align: center;
+transition: all 0.2s;
+margin: 0 auto;
+width:max-content;
+height: max-content;
+font-family: Helvetica;
+color: Black;
+}

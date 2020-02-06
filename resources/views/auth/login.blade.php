@@ -1,0 +1,472 @@
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="{{ asset('Pace/pace2.css')}}">
+
+
+
+    <!DOCTYPE html>
+    <html lang="en" >
+
+    <head>
+      <meta charset="UTF-8">
+      <title>DOB_System </title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+          <style>
+          /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+   @import "https://fonts.googleapis.com/css?family=Ubuntu:400,700italic";
+    @import "https://fonts.googleapis.com/css?family=Cabin:400";
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: rgb(25, 134, 197);
+      background-size: cover;
+      font-size: 10px;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* =========================================
+    mlmcore Tech Logo
+    ========================================= */
+    #logo {
+      animation: logo-entry 1s ease-in;
+      width: 500px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 40;
+    }
+
+    h1 {
+      animation: text-glow 2s ease-out infinite alternate;
+      font-family: 'Ubuntu', sans-serif;
+      color: #00a4a2;
+      font-size: 48px;
+      font-size: 4.8rem;
+      font-weight: bold;
+      position: absolute;
+      text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+      top: 50px;
+    }
+    h1:before {
+      animation: before-glow 2s ease-out infinite alternate;
+      border-left: 535px solid transparent;
+      border-bottom: 10px solid #00a4a2;
+      content: ' ';
+      height: 0;
+      position: absolute;
+      right: -74px;
+      top: -10px;
+      width: 0;
+    }
+    h1:after {
+      animation: after-glow 2s ease-out infinite alternate;
+      border-left: 100px solid transparent;
+      border-top: 16px solid #00a4a2;
+      content: ' ';
+      height: 0;
+      position: absolute;
+      right: -85px;
+      top: 24px;
+      transform: rotate(-47deg);
+      width: 0;
+    }
+
+    /* =========================================
+    Log in form
+    ========================================= */
+    #fade-box {
+      animation: input-entry 3s ease-in;
+      z-index: 4;
+    }
+
+    .mlmcore-login form {
+      animation: form-entry 3s ease-in-out;
+      background: #111;
+      background: linear-gradient(rgb(15, 103, 190), #111111);
+      border: 6px solid #00a4a2;
+      box-shadow: 0 0 15px #00fffd;
+      border-radius: 5px;
+      display: inline-block;
+      height: 490;
+      margin: 200px auto 0;
+      position: relative;
+      z-index: 4;
+      width: 508px;
+      transition: 1s all;
+    }
+    .mlmcore-login form:hover {
+      border: 6px solid #00fffd;
+      box-shadow: 0 0 25px #00fffd;
+      transition: 1s all;
+    }
+    .mlmcore-login input {
+      background: #222;
+      background: linear-gradient(#333333, #222222);
+      border: 1px solid #444;
+      border-radius: 5px;
+      box-shadow: 0 2px 0 #000;
+      color: #888;
+      display: block;
+      font-family: 'Cabin', helvetica, arial, sans-serif;
+      font-size: 13px;
+      font-size: 1.3rem;
+      height: 40px;
+      margin: 20px auto 10px;
+      padding: 0 10px;
+      text-shadow: 0 -1px 0 #000;
+      width: 400px;
+    }
+    .mlmcore-login input:focus {
+      animation: box-glow 1s ease-out infinite alternate;
+      background: #0B4252;
+      background: linear-gradient(#333933, #222922);
+      border-color: #00fffc;
+      box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 #000;
+      color: #efe;
+      outline: none;
+    }
+    .mlmcore-login input:invalid {
+      border: 2px solid #1E90FF;
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.2), inset 0 0 5px rgba(255, 0, 0, 0.1), 0 2px 0 #000;
+    }
+    .mlmcore-login button {
+      animation: input-entry 3s ease-in;
+      background: #222;
+      background: linear-gradient(#333333, #222222);
+      box-sizing: content-box;
+      border: 1px solid #444;
+      border-left-color: #000;
+      border-radius: 5px;
+      box-shadow: 0 2px 0 #000;
+      color: #fff;
+      display: block;
+      font-family: 'Cabin', helvetica, arial, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      height: 40px;
+      line-height: 40px;
+      margin: 20px auto;
+      padding: 0;
+      position: relative;
+      text-shadow: 0 -1px 0 #000;
+      width: 400px;
+      transition: 1s all;
+    }
+    .mlmcore-login button:hover,
+    .mlmcore-login button:focus {
+      background: #0C6125;
+      background: linear-gradient(#393939, #292929);
+      color: #00fffc;
+      outline: none;
+      transition: 1s all;
+    }
+    .mlmcore-login button:active {
+      background: #292929;
+      background: linear-gradient(#393939, #292929);
+      box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+      top: 1px;
+    }
+
+    /* =========================================
+    Spinner
+    ========================================= */
+    #circle1 {
+      animation: circle1 4s linear infinite, circle-entry 6s ease-in-out;
+      background: #000;
+      border-radius: 50%;
+      border: 10px solid #00a4a2;
+      box-shadow: 0 0 0 2px black, 0 0 0 6px #00fffc;
+      height: 500px;
+      width: 500px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      margin-left: -250px;
+      overflow: hidden;
+      opacity: 0.4;
+      z-index: -3;
+    }
+
+    #inner-cirlce1 {
+      background: #000;
+      border-radius: 50%;
+      border: 36px solid #00fffc;
+      height: 460px;
+      width: 460px;
+      margin: 10px;
+    }
+    #inner-cirlce1:before {
+      content: ' ';
+      width: 240px;
+      height: 480px;
+      background: #000;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #inner-cirlce1:after {
+      content: ' ';
+      width: 480px;
+      height: 240px;
+      background: #000;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* =========================================
+    Hexagon Mesh
+    ========================================= */
+    /* .hexagons {
+      animation: logo-entry 4s ease-in;
+      color: #000;
+      font-size: 52px;
+      font-size: 5.1rem;
+      letter-spacing: -0.2em;
+      line-height: 0.7;
+      position: absolute;
+      text-shadow: 0 0 6px #00fffc;
+      top: 570px;
+      width: 100%;
+      transform: perspective(600px) rotateX(60deg) scale(1.4);
+      z-index: -3;
+    } */
+
+
+
+
+    /* =========================================
+    Animation Keyframes
+    ========================================= */
+    @keyframes logo-entry {
+      0% {
+        opacity: 0;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes circle-entry {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.4;
+      }
+    }
+    @keyframes input-entry {
+      0% {
+        opacity: 0;
+      }
+      90% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes form-entry {
+      0% {
+        height: 0;
+        width: 0;
+        opacity: 0;
+        padding: 0;
+      }
+      20% {
+        height: 0;
+        border: 1px solid #00a4a2;
+        width: 0;
+        opacity: 0;
+        padding: 0;
+      }
+      40% {
+        width: 0;
+        height: 420;
+        border: 6px solid #00a4a2;
+        opacity: 1;
+        padding: 0;
+      }
+      100% {
+        height: 420;
+        width: 500px;
+      }
+    }
+    @keyframes box-glow {
+      0% {
+        border-color: #00b8b6;
+        box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 #000;
+      }
+      100% {
+        border-color: #00fffc;
+        box-shadow: 0 0 20px rgba(0, 255, 253, 0.6), inset 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 #000;
+      }
+    }
+    @keyframes text-glow {
+      0% {
+        color: #00a4a2;
+        text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+      }
+      100% {
+        color: #00fffc;
+        text-shadow: 0 0 20px rgba(0, 255, 253, 0.6), 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 #000;
+      }
+    }
+    @keyframes before-glow {
+      0% {
+        border-bottom: 10px solid #00a4a2;
+      }
+      100% {
+        border-bottom: 10px solid #00fffc;
+      }
+    }
+    @keyframes after-glow {
+      0% {
+        border-top: 16px solid #00a4a2;
+      }
+      100% {
+        border-top: 16px solid #00fffc;
+      }
+    }
+    @keyframes circle1 {
+      0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+
+
+    img {
+      border-radius:50%;
+    }
+        </style>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+    </head>
+
+    <body>
+
+      <div id="logo">
+      <h1><i>&ensp; &ensp; &ensp;   &ensp;DOB_System </i></h1>
+    </div>
+
+    <section class="mlmcore-login">
+
+        <form method="POST" id="submit"
+        action="{{ route('login') }}"
+        >	<br>
+            @csrf
+            <img src="{{asset('dist/img/jcflogo.png')}}"width="200" height="180" class="img-circle" alt=" Image">
+            <h2 style="color: aliceblue">Jamaica Constabulary Force</h2>
+            <div id="fade-box">
+                <div class="form-group has-feedback">
+                    <input type="email" id="email" name ="email" style="font-size:18px" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }} " placeholder="Email as Useraname" required>
+
+                              @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                     <h2>   <strong style="color:red">{{ $errors->first('email') }}</strong></h2>
+                                    </span>
+                                @endif</span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <input type="password" style="font-size:20px" id="password"  name="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" required>
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong  style="color:red">{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif
+
+                </div>
+
+                    <button>Log In</button>
+          </div>
+          @if (Route::has('password.request'))
+                    <h2>    <a class="btn btn-link " style="color:white" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a></h2>
+                                @endif
+        </form>
+
+
+                </section>
+
+                <div id="circle1">
+                  <div id="inner-cirlce1">
+                    <h2> </h2>
+                  </div>
+                </div>
+
+
+
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+
+        <script  src="./script.js"></script>
+
+
+
+
+    </body>
+
+    </html>
+
+
+
+
+<script src="{{ asset('Pace/pace.js')}}"></script>
+
+{{--
+<script>
+$(document).ready(function() {
+    $('#submit').on('submit', function (e) {
+        alert(88);
+        e.preventDefault();
+        var email = $('#email').val();
+        var password = $('#password').val();
+
+        $.ajax({
+            type: "POST",
+            url:'login',
+            data: {email: email, password:password},
+            success: function( msg ) {
+                $("#ajaxResponse").append("<div>"+msg+"</div>");
+            }
+        });
+    });
+});
+</script> --}}
+</body>
+</html>
